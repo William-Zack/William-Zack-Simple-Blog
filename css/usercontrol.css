@@ -1,0 +1,88 @@
+body, h1, h2, h3, p, label, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  label {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  #registerBtn, .reset-button {
+    font-size: 16px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #registerBtn {
+    background-color: #4CAF50;
+    color: white;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .reset-button {
+    background-color: #FF4136;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  #registerBtn:hover {
+    background-color: #45a049;
+  }
+  
+  .reset-button:hover {
+    background-color: #e82c0c;
+  }
+  
+  .login-prompt {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login-prompt a {
+    color: #333;
+    text-decoration: none;
+  }
+  
