@@ -1,9 +1,10 @@
+/* 用户注册登录的css */
 body, h1, h2, h3, p, label, input, button {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
   }
-  
+/* 注册相关 */
   .register-container {
     display: flex;
     flex-direction: column;
@@ -82,7 +83,134 @@ body, h1, h2, h3, p, label, input, button {
   }
   
   .login-prompt a {
-    color: #333;
+    color: #007BFF;
     text-decoration: none;
   }
+  .login-prompt a:hover {
+    color: #0056b3;
+  }
   
+
+/* 登录相关 */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+/* 开关样式 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* 宽度 */
+  height: 34px; /* 高度 */
+  margin: 0 10px; /* 开关两侧的边距 */
+  margin-bottom: 20px;  /* 底部边距 */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196F3;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #45a049;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #45a049;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* 标签样式 */
+.toggle-label {
+  font-size: 16px;
+  line-height: 34px; /* 与开关高度相同，确保垂直居中 */
+  margin-bottom: 20px;  /* 底部边距 */
+}
+
+#emailLabel {
+  margin-right: 5px;
+  float: left;
+}
+
+#phoneLabel {
+  margin-left: 5px;
+  float: right;
+}
+
+/* 登录切换容器 */
+.login-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loginBtn {
+  background-color: #4CAF50; /* 绿色背景 */
+  color: white; /* 白色文字 */
+  font-size: 16px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+#loginBtn:hover {
+  background-color: #45a049; /* 鼠标悬停时的颜色变化 */
+}
+
+.register-prompt {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-prompt a {
+  color: #007BFF;
+  text-decoration: none;
+}
+.register-prompt a:hover {
+  color: #0056b3;
+}

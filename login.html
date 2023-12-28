@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登录</title>
+<link rel="stylesheet" href="css/usercontrol.css">
+<link rel="icon" href="image/blog.ico" type="image/x-icon">
+<link rel="shortcut icon" href="image/blog.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="login-container">
+    <header>
+      <img src="image/logo.png" alt="网站图标" class="logo">
+    </header>
+    <main>
+        <div class="login-toggle">
+            <span id="emailLabel" class="toggle-label">邮箱</span>
+            <label class="switch">
+                <input type="checkbox" id="loginMethod">
+                <span class="slider round"></span>
+            </label>
+            <span id="phoneLabel" class="toggle-label">手机</span>
+        </div>
+      <form id="loginForm">
+        <input type="text" id="loginInput" name="login" placeholder="邮箱" required>
+        <input type="password" id="password" name="password" placeholder="密码" required>
+        <button type="submit" id="loginBtn">登录</button>
+        <p class="register-prompt">没有账户？👉<a href="register.html">点此注册</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="javascript/login.js"></script>
+</body>
+</html>
