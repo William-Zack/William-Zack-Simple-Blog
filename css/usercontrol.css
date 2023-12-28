@@ -22,6 +22,7 @@ body, h1, h2, h3, p, label, input, button {
   h2 {
     color: #333;
     margin-bottom: 20px;
+    margin-left: 23px;
   }
   
   form {
@@ -101,7 +102,14 @@ body, h1, h2, h3, p, label, input, button {
   background-color: #f7f7f7;
 }
 
+h1 {
+  color: #333;
+  margin-bottom: 27px;
+  margin-left: 40px;
+}
+
 /* 开关样式 */
+/* 参考文献：https://www.w3schools.com/howto/howto_css_switch.asp */
 .switch {
   position: relative;
   display: inline-block;

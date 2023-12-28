@@ -20,9 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const isEmail = loginInput.type === 'email';
 
         // 检查localStorage中是否有匹配的用户数据
-        if (validateCredentials(isEmail ? 'Email' : 'Phone', loginValue, password)) {
+        const username = validateCredentials(isEmail ? 'Email' : 'Phone', loginValue, password);
+        if (username) {
             alert('登录成功！');
-            // 登录成功，可进行页面跳转或状态更新
+            // 登录成功，保存用户名到sessionStorage
+            sessionStorage.setItem('currentUser', username);
+            window.location.href = 'index.html';
         } else {
             alert('登录失败，邮箱/手机号或密码不正确。');
         }
@@ -57,9 +60,10 @@ function validateCredentials(type, value, password) {
             });
 
             if (userData[type] === value && userData['Password'] === password) {
-                return true;
+                // 用户验证成功，返回用户名
+                return userData['Username'];
             }
         }
     }
-    return false;
+    return null; // 如果没有匹配的用户数据，则返回null
 }
