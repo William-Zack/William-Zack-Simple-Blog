@@ -161,3 +161,21 @@ header {
   color: black;
   cursor: pointer;
 }
+
+/* 底部部分 */
+.footer {
+  text-align: center; /* 内容居中 */
+  padding: 20px; /* 底部内边距 */
+  background-color: #f1f1f1; /* 底部背景色 */
+  color: #333; /* 文本颜色 */
+}
+
+.footer h3 {
+  margin: 0 0 10px; /* 大字与下方小字之间的间距 */
+  font-size: 1.5em; /* 大字的字体大小 */
+}
+
+.footer p {
+  margin: 0; /* 去掉段落默认的上下边距 */
+  font-size: 0.9em; /* 小字的字体大小 */
+}
