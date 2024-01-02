@@ -3,22 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginInput = document.getElementById('loginInput');
     const passwordInput = document.getElementById('password');
     const loginForm = document.getElementById('loginForm');
-
     // 初始化登录方法
     updateLoginMethod(loginMethodCheckbox.checked);
-
     // 切换登录方式
     loginMethodCheckbox.addEventListener('change', () => {
         updateLoginMethod(loginMethodCheckbox.checked);
     });
-
     // 处理登录逻辑
     loginForm.addEventListener('submit', event => {
         event.preventDefault();
         const loginValue = loginInput.value;
         const password = passwordInput.value;
         const isEmail = loginInput.type === 'email';
-
         // 检查localStorage中是否有匹配的用户数据
         const username = validateCredentials(isEmail ? 'Email' : 'Phone', loginValue, password);
         if (username) {
@@ -53,12 +49,10 @@ function validateCredentials(type, value, password) {
             const userDataString = localStorage.getItem(key);
             const userDataLines = userDataString.split('\n');
             const userData = {};
-
             userDataLines.forEach(line => {
                 const [k, v] = line.split(': ');
                 userData[k.trim()] = v;
             });
-
             if (userData[type] === value && userData['Password'] === password) {
                 // 用户验证成功，返回用户名
                 return userData['Username'];

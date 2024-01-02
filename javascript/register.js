@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       return;
     }
 
-    // node.js，从入门到放弃->算了还是保存用户信息到localStorage得了
+    // 保存用户信息到localStorage
     saveUserData(username, { email, username, password, phone });
 
     // 注册成功
