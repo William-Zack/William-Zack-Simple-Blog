@@ -27,7 +27,40 @@
                 <button type="submit">搜索</button>
             </div>
             <div class="user-area">
-                <img src="" alt="用户头像" class="user-avatar" id="userAvatar">
+                <!-- 现有的头像 -->
+                <img src="image/user-avatar/default.png" alt="用户头像" class="user-avatar" id="userAvatar">
+                <!-- 头像选择模态框 -->
+                <!-- 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html -->
+                <div id="avatarModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="avatar-selection">
+                    <!-- 头像选择区 -->
+                    <!-- PNG头像 -->
+                    <img src="image/user-avatar/00.png" alt="William-Zack" class="select-avatar">
+                    <img src="image/user-avatar/01.png" alt="滑稽" class="select-avatar">
+                    <img src="image/user-avatar/02.png" alt="慵懒的Will" class="select-avatar">
+                    <img src="image/user-avatar/03.png" alt="摆烂" class="select-avatar">
+                    <img src="image/user-avatar/04.png" alt="应急食品" class="select-avatar">
+                    <img src="image/user-avatar/05.png" alt="银河球棒侠" class="select-avatar">
+                    <img src="image/user-avatar/06.png" alt="蒂蒂" class="select-avatar">
+                    <img src="image/user-avatar/07.png" alt="七实" class="select-avatar">
+                    <img src="image/user-avatar/08.png" alt="蓝色恶魔" class="select-avatar">
+                    <img src="image/user-avatar/09.png" alt="GIVE UP" class="select-avatar">
+                    <img src="image/user-avatar/10.png" alt="AmOnG uS" class="select-avatar">
+                    <!-- GIF头像 -->
+                    <img src="image/user-avatar/11.gif" alt="大鸟转转转" class="select-avatar">
+                    <img src="image/user-avatar/12.gif" alt="审核快乐鸡块" class="select-avatar">
+                    <img src="image/user-avatar/13.gif" alt="大脑升级，但原神启动" class="select-avatar">
+                    <img src="image/user-avatar/14.gif" alt="法老★DameDane" class="select-avatar">
+                    <img src="image/user-avatar/15.gif" alt="黑人抬棺" class="select-avatar">
+                    </div>
+                    <div class="avatar-preview">
+                    <img src="image/user-avatar/default.png" alt="预览头像" id="previewAvatar">
+                    <p id="avatarDescription">头像预览</p>
+                    </div>
+                </div>
+                </div>
                 <a href="register.html">注册</a>
                 <a href="login.html">登录</a>
             </div>
