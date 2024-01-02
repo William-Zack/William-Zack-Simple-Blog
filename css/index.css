@@ -12,20 +12,13 @@ body, h1, h2, h3 {
   height: 100vh;
 }
 
-/* 页头和页脚的样式 */
-.footer {
-  background-color: #ddd;
-  padding: 20px;
-  text-align: center;
-}
-
 /* 主内容区的样式 */
 .content {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  color: #f5f5f5;
 }
 
 /* 主标题样式 */
@@ -34,35 +27,89 @@ body, h1, h2, h3 {
   font-weight: bold;
 }
 
+/* 视频背景样式 */
+#bgVideo {
+  position: fixed; /* 固定位置 */
+  right: 0;
+  bottom: 0;
+  min-width: 100%; /* 至少覆盖整个宽度 */
+  min-height: 100%; /* 至少覆盖整个高度 */
+  width: auto;
+  height: auto;
+  z-index: -100; /* 确保视频在内容后面 */
+  background-size: cover; /* 覆盖整个容器 */
+}
+
+.container {
+  position: relative; /* 相对定位 */
+  z-index: 100; /* 确保内容在视频之上 */
+}
+
 /* 头部区域样式 */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #61defd;
+  background-color: rgba(20, 208, 255, 0.75);
 }
 
 .logo img {
-  margin-left: 20px;
-  margin-right: 30px;
+  margin-left: 60px;
   height: 50px;
 }
 
 .menu a {
-  margin-right: 20px;
+  margin-right: 65px;
   text-decoration: none;
-  color: #000;
+  color: #f5f5f5;
+  font-weight: bold;
 }
 
+/* 搜索框样式 */
+/* 参考文献：https://blog.csdn.net/m0_62237068/article/details/131784318 */
 .search-bar {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
+  align-items: center;
 }
 
+/* 搜索输入框样式 */
 .search-bar input[type="text"] {
-  margin-right: 10px;
+  width: 400px;
+  height: 45px;
+  background-image: url('../image/search.png'); /* 使用 ../ 返回上一级目录 参考文献：https://blog.csdn.net/neet007/article/details/51986587 */
+  background-repeat: no-repeat;
+  border-radius: 30px 0px 0px 30px;
+  padding-left: 50px;
+  background-position: 12px 10px;
+  background-size: 25px;
+  color: darkgray;
+  font-size: 18px;
+  border: none;
+  outline: none; /* 移除聚焦时的默认外边框 */
+}
+
+/* 搜索输入框获得焦点时的样式 */
+.search-bar input[type="text"]:focus {
+  outline: coral solid 1px;
+}
+
+/* 搜索按钮样式 */
+.search-bar button[type="submit"] {
+  width: 90px;
+  height: 47px;
+  border: none;
+  background-color: coral;
+  color: #fff;
+  border-radius: 0px 20px 20px 0px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 搜索按钮悬浮时样式 */
+.search-bar button[type="submit"]:hover {
+  background-color: #ff5900;
 }
 
 .user-area {
@@ -84,7 +131,8 @@ header {
 .user-area a {
   margin-right: 50px;
   text-decoration: none;
-  color: #000;
+  color: #f5f5f5;
+  font-weight: bold;
 }
 
 /* 用户头像样式 */
@@ -104,16 +152,19 @@ header {
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
+  opacity: 1; /* 不透明度 */
 }
 
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: rgba(20, 208, 255, 0.88);
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
   display: flex;
+  opacity: 1; /* 不透明度 */
+  border-radius: 15px;
 }
 
 .avatar-selection {
@@ -166,8 +217,7 @@ header {
 .footer {
   text-align: center; /* 内容居中 */
   padding: 20px; /* 底部内边距 */
-  background-color: #f1f1f1; /* 底部背景色 */
-  color: #333; /* 文本颜色 */
+  color: #f1f1f1; /* 文本颜色 */
 }
 
 .footer h3 {
