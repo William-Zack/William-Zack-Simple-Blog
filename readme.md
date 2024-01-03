@@ -10,7 +10,7 @@
 
 目前实现的功能：
 
-✅主页
+✅主页（特别鸣谢：[原神启动项目](https://github.com/Titlecan/Genshin-Start)）
 
 ✅注册页面以及对应检测逻辑
 
