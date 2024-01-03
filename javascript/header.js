@@ -1,3 +1,4 @@
+// 顶部栏相关js代码
 window.onload = function() {
   var userAvatar = document.getElementById("userAvatar");
   var currentUser = sessionStorage.getItem('currentUser');
