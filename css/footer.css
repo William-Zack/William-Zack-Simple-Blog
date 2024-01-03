@@ -2,7 +2,7 @@
 .footer {
   text-align: center; /* 内容居中 */
   padding: 20px; /* 底部内边距 */
-  color: #f1f1f1; /* 文本颜色 */
+  color: black; /* 文本颜色 */
 }
 
 .footer h3 {

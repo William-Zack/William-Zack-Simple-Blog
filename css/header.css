@@ -4,7 +4,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(20, 208, 255, 0.75);
+  background-color: rgba(20, 208, 255);
 }
 
 .logo img {

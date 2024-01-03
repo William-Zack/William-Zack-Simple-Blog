@@ -1,0 +1,67 @@
+/* 普通博客的css文件 */
+/* 重置浏览器默认样式 */
+body, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+/* 页面主容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 主内容区的样式 */
+.content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+/* 主标题样式 */
+.main-title {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* 主内容和侧边栏布局 */
+.content {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 2%;
+  background-color: #f1f1f1;
+  opacity: 0.7; /* 不透明度 */
+}
+
+.main-content {
+  flex: 4; /* 占据2/3的宽度 */
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 1; /* 占据1/3的宽度 */
+  padding: 20px;
+  border-left: 1px solid #ddd; /* 添加分隔线 */
+}
+
+/* 调整文章分类列表样式 */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}

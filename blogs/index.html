@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William-Zack的个人博客</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/blogs.css">
+    <link rel="icon" href="../image/blog.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../image/blog.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="../image/logo.png" alt="William-Zack的个人博客">
+            </div>
+            <nav class="menu">
+                <a href="../index.html">首页</a>
+                <a href="../blogs/index.html">帖子</a>
+                <a href="../blogs/announcement.html">公告</a>
+                <a href="../blogs/contact.html">联系</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索...">
+                <button type="submit">搜索</button>
+                <!-- 搜索结果模态框 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                    <div id="searchResults" class="search-results"></div>
+                    <button class="close-search">&times;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="user-area">
+                <!-- 现有的头像 -->
+                <img src="../image/user-avatar/default.png" alt="用户头像" class="user-avatar" id="userAvatar">
+                <!-- 头像选择模态框 -->
+                <!-- 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html -->
+                <div id="avatarModal" class="modal">
+                <div class="modal-content">
+                    <div class="avatar-selection">
+                    <!-- 头像选择区 -->
+                    <!-- PNG头像 -->
+                    <img src="../image/user-avatar/00.png" alt="William-Zack" class="select-avatar">
+                    <img src="../image/user-avatar/01.png" alt="滑稽" class="select-avatar">
+                    <img src="../image/user-avatar/02.png" alt="慵懒的Will" class="select-avatar">
+                    <img src="../image/user-avatar/03.png" alt="摆烂" class="select-avatar">
+                    <img src="../image/user-avatar/04.png" alt="应急食品" class="select-avatar">
+                    <img src="../image/user-avatar/05.png" alt="银河球棒侠" class="select-avatar">
+                    <img src="../image/user-avatar/06.png" alt="蒂蒂" class="select-avatar">
+                    <img src="../image/user-avatar/07.png" alt="七实" class="select-avatar">
+                    <img src="../image/user-avatar/08.png" alt="蓝色恶魔" class="select-avatar">
+                    <img src="../image/user-avatar/09.png" alt="GIVE UP" class="select-avatar">
+                    <img src="../image/user-avatar/10.png" alt="AmOnG uS" class="select-avatar">
+                    <!-- GIF头像 -->
+                    <img src="../image/user-avatar/11.gif" alt="大鸟转转转" class="select-avatar">
+                    <img src="../image/user-avatar/12.gif" alt="审核快乐鸡块" class="select-avatar">
+                    <img src="../image/user-avatar/13.gif" alt="大脑升级，但原神启动" class="select-avatar">
+                    <img src="../image/user-avatar/14.gif" alt="法老★DameDane" class="select-avatar">
+                    <img src="../image/user-avatar/15.gif" alt="黑人抬棺" class="select-avatar">
+                    </div>
+                    <div class="avatar-preview">
+                    <img src="../image/user-avatar/default.png" alt="预览头像" id="previewAvatar">
+                    <p id="avatarDescription">头像预览</p>
+                    </div>
+                    <button class="close-avatar">&times;</button>
+                </div>
+                </div>
+                <a href="../register.html" id="registerLink">注册</a>
+                <a href="../login.html" id="loginLink">登录</a>
+                <!-- 欢迎信息，初始隐藏，登陆后显示 -->
+                <div id="welcomeMessage" style="display: none;">
+                    欢迎回来！用户 <div id="username" style="display: inline;"></div>
+                    <img src="../image/exit.png" alt="退出" id="logoutIcon" style="margin-left: 15px; width: auto; height: 40px; vertical-align: middle;">
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="main-content">
+                <h2>主要内容</h2>
+                <!-- 在这里添加或链接到您的文章内容 -->
+            </div>
+            <aside class="sidebar">
+                <h3>文章分类</h3>
+                <ul>
+                    <li><a href="category1.html">分类1</a></li>
+                    <li><a href="category2.html">分类2</a></li>
+                    <!-- 更多分类 -->
+                </ul>
+            </aside>
+        </main>
+        <footer class="footer">
+            <h3>© 2024 William-Zack</h3>
+            <p>本站仅作为测试网站，素材均来源于网络，其著作权归原作者所有。</p>
+        </footer>
+    </div>
+    <script src="../javascript/header.js"></script>
+    <script src="../javascript/search.js"></script>
+</body>
+
+</html>

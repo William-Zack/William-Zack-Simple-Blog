@@ -1,7 +1,7 @@
 // 内置的博客文章列表
 var blogPosts = [
     { title: "主页", url: "index.html" },
-    { title: "博客主页", url: "blogs/index.html" },
+    { title: "帖子", url: "blogs/index.html" },
     // 待添加博客文章
 ];
 // 搜索功能
