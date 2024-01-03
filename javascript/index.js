@@ -1,5 +1,3 @@
-// 检查用户是否已登录并更新头像
-// 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html
 window.onload = function() {
   var userAvatar = document.getElementById("userAvatar");
   var currentUser = sessionStorage.getItem('currentUser');
@@ -10,6 +8,8 @@ window.onload = function() {
   var usernameDiv = document.getElementById('username');
 
   if(currentUser) {
+    // 检查用户是否已登录并更新头像
+    // 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html
     // 如果已登录，检测用户是否选择了头像
     var selectedAvatar = localStorage.getItem('selectedAvatar');
     if(selectedAvatar) {
