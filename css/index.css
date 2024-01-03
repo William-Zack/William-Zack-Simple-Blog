@@ -210,6 +210,8 @@ header {
 #welcomeMessage {
   font-size: 20px;
   font-weight: bold;
+  display: flex;
+  text-align: center;
   /* 使用渐变色作为文字颜色 */
   background: linear-gradient(to right, #ff8400, #ffff00); /* 这里是两种颜色的渐变 */
   -webkit-background-clip: text; /* 设置背景剪裁为文字 */

@@ -6,6 +6,8 @@ window.onload = function() {
   var registerLink = document.getElementById('registerLink');
   var loginLink = document.getElementById('loginLink');
   var welcomeMessage = document.getElementById('welcomeMessage');
+  var logoutIcon = document.getElementById('logoutIcon');
+  var usernameDiv = document.getElementById('username');
 
   if(currentUser) {
     // 如果已登录，检测用户是否选择了头像
@@ -21,8 +23,14 @@ window.onload = function() {
     // 隐藏注册和登录链接，显示欢迎信息
     registerLink.style.display = 'none'; // 隐藏注册链接
     loginLink.style.display = 'none'; // 隐藏登录链接
-    welcomeMessage.textContent = '欢迎回来！用户 ' + currentUser; // 设置欢迎信息
+    usernameDiv.textContent = currentUser; // 显示用户名
     welcomeMessage.style.display = 'block'; // 显示欢迎信息
+    logoutIcon.style.display = 'inline'; // 显示退出图标
+    // 退出图标的点击事件
+    logoutIcon.onclick = function() {
+      sessionStorage.removeItem('currentUser'); // 清除登录状态
+      location.reload(); // 重新加载页面
+    };
   }
   else {
     // 如果未登录，显示默认头像
@@ -31,6 +39,7 @@ window.onload = function() {
     registerLink.style.display = 'block'; // 显示注册链接
     loginLink.style.display = 'block'; // 显示登录链接
     welcomeMessage.style.display = 'none'; // 隐藏欢迎信息
+    logoutIcon.style.display = 'none'; // 隐藏退出图标
   }
 
   // 获取模态框，按钮和关闭按钮
