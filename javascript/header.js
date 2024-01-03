@@ -45,7 +45,7 @@ window.onload = function() {
 
   // 获取模态框，按钮和关闭按钮
   var modal = document.getElementById("avatarModal");
-  var span = document.getElementsByClassName("close")[0];
+  var closeAvatarModal = avatarModal.querySelector(".close-avatar");
 
   // 点击头像打开模态框，如果用户未登录则跳转到登录界面。
   userAvatar.onclick = function() {
@@ -58,16 +58,16 @@ window.onload = function() {
   }
 
   // 点击 (x) 关闭模态框
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+  closeAvatarModal.onclick = function() {
+    avatarModal.style.display = "none";
+  };
 
   // 点击模态框外部关闭模态框
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == avatarModal) {
+      avatarModal.style.display = "none";
     }
-  }
+  };
 
   // 选择头像
   var avatars = document.getElementsByClassName("select-avatar");

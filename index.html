@@ -31,6 +31,13 @@
             <div class="search-bar">
                 <input type="text" placeholder="搜索...">
                 <button type="submit">搜索</button>
+                <!-- 搜索结果模态框 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                    <div id="searchResults" class="search-results"></div>
+                    <button class="close-search">&times;</button>
+                    </div>
+                </div>
             </div>
             <div class="user-area">
                 <!-- 现有的头像 -->
@@ -39,7 +46,6 @@
                 <!-- 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html -->
                 <div id="avatarModal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
                     <div class="avatar-selection">
                     <!-- 头像选择区 -->
                     <!-- PNG头像 -->
@@ -65,6 +71,7 @@
                     <img src="image/user-avatar/default.png" alt="预览头像" id="previewAvatar">
                     <p id="avatarDescription">头像预览</p>
                     </div>
+                    <button class="close-avatar">&times;</button>
                 </div>
                 </div>
                 <a href="register.html" id="registerLink">注册</a>
@@ -85,6 +92,7 @@
         </footer>
     </div>
     <script src="javascript/header.js"></script>
+    <script src="javascript/search.js"></script>
 </body>
 
 </html>

@@ -66,6 +66,14 @@ header {
   background-color: #ff5900;
 }
 
+/* 搜索结果模态框样式 */
+.search-results {
+  max-height: 60vh; /* 最大高度，确保不超过屏幕的3/4 */
+  overflow-y: auto; /* 启用垂直滚动 */
+  text-align: left;
+  margin-left: 10px;
+}
+
 .user-area {
   display: flex;
   align-items: center;
@@ -153,15 +161,6 @@ header {
   border-radius: 50%;
 }
 
-.close {
-  color: #aaa;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 28px;
-  font-weight: bold;
-}
-
 #welcomeMessage {
   font-size: 20px;
   font-weight: bold;
@@ -174,8 +173,35 @@ header {
   color: transparent; /* 使文字颜色透明 */
 }
 
-.close:hover,
-.close:focus {
-  color: black;
+/* 模态框关闭按钮 */
+/* 头像选择模态框关闭按钮样式 */
+.close-avatar {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
+}
+
+.close-avatar:hover,
+.close-avatar:focus {
+  color: black;
+}
+
+/* 搜索结果模态框关闭按钮样式 */
+.close-search {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-search:hover,
+.close-search:focus {
+  color: black;
 }
