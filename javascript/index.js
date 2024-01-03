@@ -3,7 +3,10 @@
 window.onload = function() {
   var userAvatar = document.getElementById("userAvatar");
   var currentUser = sessionStorage.getItem('currentUser');
-  
+  var registerLink = document.getElementById('registerLink');
+  var loginLink = document.getElementById('loginLink');
+  var welcomeMessage = document.getElementById('welcomeMessage');
+
   if(currentUser) {
     // 如果已登录，检测用户是否选择了头像
     var selectedAvatar = localStorage.getItem('selectedAvatar');
@@ -15,10 +18,19 @@ window.onload = function() {
       // 如果未选择头像，显示00号图片作为头像。
       userAvatar.src = "image/user-avatar/00.png";
     }
+    // 隐藏注册和登录链接，显示欢迎信息
+    registerLink.style.display = 'none'; // 隐藏注册链接
+    loginLink.style.display = 'none'; // 隐藏登录链接
+    welcomeMessage.textContent = '欢迎回来！用户 ' + currentUser; // 设置欢迎信息
+    welcomeMessage.style.display = 'block'; // 显示欢迎信息
   }
   else {
     // 如果未登录，显示默认头像
     userAvatar.src = "image/user-avatar/default.png";
+    // 未登录，显示注册和登录链接，隐藏欢迎信息
+    registerLink.style.display = 'block'; // 显示注册链接
+    loginLink.style.display = 'block'; // 显示登录链接
+    welcomeMessage.style.display = 'none'; // 隐藏欢迎信息
   }
 
   // 获取模态框，按钮和关闭按钮

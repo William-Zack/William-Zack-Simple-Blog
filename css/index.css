@@ -207,6 +207,16 @@ header {
   font-weight: bold;
 }
 
+#welcomeMessage {
+  font-size: 20px;
+  font-weight: bold;
+  /* 使用渐变色作为文字颜色 */
+  background: linear-gradient(to right, #ff8400, #ffff00); /* 这里是两种颜色的渐变 */
+  -webkit-background-clip: text; /* 设置背景剪裁为文字 */
+  background-clip: text; /* 设置背景剪裁为文字，以实现兼容性 */
+  color: transparent; /* 使文字颜色透明 */
+}
+
 .close:hover,
 .close:focus {
   color: black;
