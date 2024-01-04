@@ -19,7 +19,16 @@
       <h2>👋 Hi~ 欢迎注册博客！</h2>
       <form id="registerForm">
         <label for="email">电子邮件地址</label>
-        <input type="email" id="email" name="email" placeholder="电子邮件地址" required>
+        <input list="emailList" id="email" name="email" placeholder="电子邮件地址" required>
+        <!-- 将邮件框加入datalist，文档的要求罢了 -->
+        <datalist id="emailList">
+          <option value="@qq.com">
+          <option value="@126.com">
+          <option value="@163.com">
+          <option value="@gmail.com">
+          <option value="@yahoo.com">
+          <option value="@outlook.com">
+        </datalist>
         <label for="username">用户名</label>
         <input type="text" id="username" name="username" placeholder="用户名" required>
         <label for="password">密码</label>
@@ -37,6 +46,8 @@
         <!-- 哈哈，个人简介？反正没个人页面所以不保存了，文档要求有输入框罢了（￣へ￣） -->
         <label for="bio">个人简介（可选）</label>
         <textarea id="bio" name="bio" placeholder="在此输入您的个人简介或注册理由" rows="2"></textarea>
+        <!-- 使用keygen生成公钥，https://www.w3school.com.cn/tags/tag_keygen.asp，嗯……有一说一，好像写的不对？总之文档的要求罢了 -->
+        <keygen name="security" />
         <button type="submit" id="registerBtn">注册</button>
         <button type="button" class="reset-button">重置信息</button>
         <p class="login-prompt">已有账户？<a href="login.html">👉点此登录</a></p>
