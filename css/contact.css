@@ -3,7 +3,228 @@
 body, h1, h2, h3 {
   margin: 0;
   padding: 0;
-  background-color: #f1f1f1;
+}
+
+/* 视频背景样式 */
+#bgVideo {
+  position: fixed; /* 固定位置 */
+  right: 0;
+  bottom: -70px;
+  min-width: 100%; /* 至少覆盖整个宽度 */
+  min-height: 100%; /* 至少覆盖整个高度 */
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100; /* 确保视频在内容后面 */
+  background-size: cover; /* 覆盖整个容器 */
+}
+
+/* 顶部栏css文件 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(20, 208, 255, 0.75);
+}
+
+.logo img {
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 50px;
+}
+
+.menu a {
+  margin-right: 65px;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: bold;
+}
+
+/* 搜索框样式 */
+/* 参考文献：https://blog.csdn.net/m0_62237068/article/details/131784318 */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 搜索输入框样式 */
+.search-bar input[type="text"] {
+  width: 400px;
+  height: 45px;
+  background-image: url('../image/search.png'); /* 使用 ../ 返回上一级目录 参考文献：https://blog.csdn.net/neet007/article/details/51986587 */
+  background-repeat: no-repeat;
+  border-radius: 30px 0px 0px 30px;
+  padding-left: 50px;
+  background-position: 12px 10px;
+  background-size: 25px;
+  color: darkgray;
+  font-size: 18px;
+  border: none;
+  outline: none; /* 移除聚焦时的默认外边框 */
+}
+
+/* 搜索输入框获得焦点时的样式 */
+.search-bar input[type="text"]:focus {
+  outline: coral solid 1px;
+}
+
+/* 搜索按钮样式 */
+.search-bar button[type="submit"] {
+  width: 90px;
+  height: 47px;
+  border: none;
+  background-color: coral;
+  color: #fff;
+  border-radius: 0px 20px 20px 0px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 搜索按钮悬浮时样式 */
+.search-bar button[type="submit"]:hover {
+  background-color: #ff5900;
+}
+
+/* 搜索结果模态框样式 */
+.search-results {
+  max-height: 60vh; /* 最大高度，确保不超过屏幕的3/4 */
+  overflow-y: auto; /* 启用垂直滚动 */
+  text-align: left;
+  margin-left: 10px;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.user-area .user-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 50px;
+  border-radius: 50%; /* 圆形图片 */
+  object-fit: cover; /* 确保图片在框中以合适的方式填充，而不被拉伸或压缩 */
+  border: 2px solid #fff; /* 圆形头像边框 */
+}
+
+
+.user-area a {
+  margin-right: 50px;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: bold;
+}
+
+/* 用户头像样式 */
+.user-avatar {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* 模态框样式 */
+/* 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 1; /* 不透明度 */
+}
+
+.modal-content {
+  position: relative;
+  background-color: rgba(20, 208, 255, 0.7);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  display: flex;
+  opacity: 1; /* 不透明度 */
+  border-radius: 15px;
+}
+
+.avatar-selection {
+  flex-basis: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.select-avatar {
+  cursor: pointer;
+  width: 80px; /* 设置固定的宽度 */
+  height: 80px; /* 设置固定的高度 */
+  margin: 10px;
+  object-fit: cover; /* 裁剪并保持图片的比例 */
+  object-position: center; /* 确保图片中心对齐 */
+  border-radius: 50%;
+}
+
+.avatar-preview {
+  flex-basis: 25%;
+  text-align: center;
+}
+
+.avatar-preview img {
+  width: 100%; /* 宽度占满容器 */
+  height: auto; /* 高度自动调整 */
+  object-fit: cover; /* 裁剪并保持图片的比例 */
+  object-position: center; /* 确保图片中心对齐 */
+  border-radius: 50%;
+}
+
+#welcomeMessage {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  /* 使用渐变色作为文字颜色 */
+  background: linear-gradient(to right, #ff8400, #ffff00); /* 这里是两种颜色的渐变 */
+  -webkit-background-clip: text; /* 设置背景剪裁为文字 */
+  background-clip: text; /* 设置背景剪裁为文字，以实现兼容性 */
+  color: transparent; /* 使文字颜色透明 */
+}
+
+/* 模态框关闭按钮 */
+/* 头像选择模态框关闭按钮样式 */
+.close-avatar {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-avatar:hover,
+.close-avatar:focus {
+  color: black;
+}
+
+/* 搜索结果模态框关闭按钮样式 */
+.close-search {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-search:hover,
+.close-search:focus {
+  color: black;
 }
 
 /* 页面主容器样式 */
@@ -11,6 +232,8 @@ body, h1, h2, h3 {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position: relative; /* 相对定位 */
+  z-index: 100; /* 确保内容在视频之上 */
 }
 
 /* 主内容区的样式 */
@@ -20,7 +243,8 @@ body, h1, h2, h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: white;
+  text-shadow: 2px 2px 0 #000; /* 添加阴影，不然字看不清 */
 }
 
 /* 联系标题样式 */
@@ -47,4 +271,22 @@ body, h1, h2, h3 {
   width: 30px; /* 图标的大小 */
   height: 30px;
   margin-right: 10px; /* 图标和文字之间的间距 */
+}
+
+/* 底部部分 */
+.footer {
+  text-align: center; /* 内容居中 */
+  padding: 20px; /* 底部内边距 */
+  color: white; /* 文本颜色 */
+  text-shadow: 2px 2px 0 #000; /* 添加阴影，不然字看不清 */
+}
+
+.footer h3 {
+  margin: 0 0 10px; /* 大字与下方小字之间的间距 */
+  font-size: 1.5em; /* 大字的字体大小 */
+}
+
+.footer p {
+  margin: 0; /* 去掉段落默认的上下边距 */
+  font-size: 0.9em; /* 小字的字体大小 */
 }
