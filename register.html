@@ -28,6 +28,15 @@
         <input type="password" id="confirm-password" name="confirm-password" placeholder="再次输入密码" required>
         <label for="phone">手机号码（仅国内手机）</label>
         <input type="tel" id="phone" name="phone" placeholder="手机号码" required>
+        <!-- 下面是后来才加进来的，自评文档的要求罢了QAQ -->
+        <label for="humanCheck">您是人类吗？</label>
+        <select id="humanCheck" name="humanCheck" required>
+        <option value="no" selected>否</option>
+        <option value="yes">是</option>
+        </select>
+        <!-- 哈哈，个人简介？反正没个人页面所以不保存了，文档要求有输入框罢了（￣へ￣） -->
+        <label for="bio">个人简介（可选）</label>
+        <textarea id="bio" name="bio" placeholder="在此输入您的个人简介或注册理由" rows="2"></textarea>
         <button type="submit" id="registerBtn">注册</button>
         <button type="button" class="reset-button">重置信息</button>
         <p class="login-prompt">已有账户？<a href="login.html">👉点此登录</a></p>

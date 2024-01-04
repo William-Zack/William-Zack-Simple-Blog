@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   const registerForm = document.getElementById('registerForm');
   const resetButton = document.querySelector('.reset-button');
+  const humanCheck = document.getElementById('humanCheck');
   resetButton.addEventListener('click', function() {
     if (confirm('确定要重置已填写的信息吗？')) {
       registerForm.reset();
@@ -40,11 +41,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
       return;
     }
 
+    if (!validateHumanCheck(humanCheck.value)) {
+      alert('请确认您是人类！');
+      return;
+    }
+
     // 保存用户信息到localStorage
     saveUserData(username, { email, username, password, phone });
 
     // 注册成功
     alert('注册成功！');
+    window.location.href = 'login.html';
   });
 });
 
@@ -76,6 +83,11 @@ function validatePhone(phone) {
   // 参考文献：https://blog.csdn.net/itbrand/article/details/109239620
   const re = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
   return re.test(phone);
+}
+
+function validateHumanCheck(humanCheckValue) {
+  // 检查用户是否选择了“是”
+  return humanCheckValue === 'yes';
 }
 
 function isUserExists(username, email, phone) {

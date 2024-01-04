@@ -1,94 +1,100 @@
-/* 用户注册登录的css */
-body, h1, h2, h3, p, label, input, button {
-    margin: 0;
-    padding: 0;
-  }
+body, h1, h2, h3, p, label, input, button, select, textarea {
+  margin: 0;
+  padding: 0;
+}
+
 /* 注册相关 */
-  .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f7f7f7;
-  }
-  
-  .logo {
-    max-width: 100px;
-    margin-bottom: 30px;
-  }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-    margin-left: 23px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  label {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    font-size: 14px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  #registerBtn, .reset-button {
-    font-size: 16px;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #registerBtn {
-    background-color: #4CAF50;
-    color: white;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .reset-button {
-    background-color: #FF4136;
-    color: white;
-    margin-top: 10px;
-  }
-  
-  #registerBtn:hover {
-    background-color: #45a049;
-  }
-  
-  .reset-button:hover {
-    background-color: #e82c0c;
-  }
-  
-  .register-prompt {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .register-prompt a {
-    color: #007BFF;
-    text-decoration: none;
-  }
-  .register-prompt a:hover {
-    color: #0056b3;
-  }
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  padding-bottom: 20px;
+}
+
+.logo {
+  max-width: 100px;
+  margin-bottom: 30px auto;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  margin-left: 23px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+label {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+textarea {
+  resize: vertical; /* 允许垂直调整大小 */
+  min-height: 20px; /* 最小高度 */
+}
+
+#registerBtn, .reset-button {
+  font-size: 16px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#registerBtn {
+  background-color: #4CAF50;
+  color: white;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reset-button {
+  background-color: #FF4136;
+  color: white;
+  margin-top: 10px;
+}
+
+#registerBtn:hover {
+  background-color: #45a049;
+}
+
+.reset-button:hover {
+  background-color: #e82c0c;
+}
+
+.register-prompt {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-prompt a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.register-prompt a:hover {
+  color: #0056b3;
+}
 
 /* 登录相关 */
 .login-container {
