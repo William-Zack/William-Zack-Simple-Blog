@@ -20,6 +20,8 @@ window.onload = function() {
     else {
       // 如果未选择头像，显示00号图片作为头像。
       userAvatar.src = "image/user-avatar/00.png";
+      // 因为注册后必定进入首页，所以头像作为默认头像保存到localStorage中，以防止在blogs页面中因为路径问题无法显示头像。
+      localStorage.setItem('selectedAvatar', userAvatar.src);
     }
     // 隐藏注册和登录链接，显示欢迎信息
     registerLink.style.display = 'none'; // 隐藏注册链接
@@ -34,8 +36,6 @@ window.onload = function() {
     };
   }
   else {
-    // 如果未登录，显示默认头像
-    userAvatar.src = "image/user-avatar/default.png";
     // 未登录，显示注册和登录链接，隐藏欢迎信息
     registerLink.style.display = 'block'; // 显示注册链接
     loginLink.style.display = 'block'; // 显示登录链接
