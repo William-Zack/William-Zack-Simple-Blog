@@ -2,10 +2,13 @@
 var blogPosts = [
     { title: "主页", url: "index.html" },
     { title: "帖子", url: "blogs/index.html" },
-    // 待添加博客文章
+    { title: "公告", url: "blogs/announcement.html" },
+    { title: "联系", url: "blogs/contact.html" },
+    // 如果新增了更多文章可以添加在这里，也可以独立出去单独作为一个json文件，不过这里帖子就几个就没独立出去。
 ];
 // 搜索功能
 document.addEventListener('DOMContentLoaded', function() {
+    // 获取搜索框和搜索按钮
     var searchInput = document.querySelector(".search-bar input[type='text']");
     var searchButton = document.querySelector(".search-bar button[type='submit']");
   
@@ -20,11 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // 搜索博客文章的函数
     function searchBlogs(searchTerm) {
-      var lowerCaseSearchTerm = searchTerm.toLowerCase();
+      var lowerCaseSearchTerm = searchTerm.toLowerCase(); // 将搜索词转换为小写
+      // 过滤出标题中包含搜索词的文章
       var foundPosts = blogPosts.filter(function(post) {
         return post.title.toLowerCase().includes(lowerCaseSearchTerm);
       });
-  
+      // 如果找到匹配的文章，显示搜索结果，否则提示未找到匹配内容。
       if (foundPosts.length > 0) {
         displaySearchResults(foundPosts); // 显示搜索结果
       } else {
@@ -55,7 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     posts.forEach(function(post) {
       var resultLink = document.createElement('a');
-      resultLink.href = post.url;
+      // 因为在blogs文件夹也使用了这个js文件，所以这里要检测是否在blogs文件夹中来返回链接。
+      if(location.pathname.includes('blogs')) {
+        resultLink.href = '../' + post.url;
+      }
+      else {
+        resultLink.href = post.url;
+      }
       resultLink.textContent = post.title;
       resultLink.style.display = 'block'; // 使每个链接独占一行
       resultLink.style.marginBottom = '10px'; // 添加一些间距

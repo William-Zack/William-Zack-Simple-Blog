@@ -18,8 +18,13 @@ window.onload = function() {
       userAvatar.src = selectedAvatar;
     }
     else {
-      // 如果未选择头像，显示00号图片作为头像。
-      userAvatar.src = "image/user-avatar/00.png";
+      // 如果未选择头像，显示00号图片作为头像。因为在blogs文件夹也使用了这个js文件，所以这里要检测是否在blogs文件夹中。
+      if(location.pathname.includes('blogs')) {
+        userAvatar.src = '../image/user-avatar/00.png';
+      }
+      else {
+        userAvatar.src = 'image/user-avatar/00.png';
+      }
       // 因为注册后必定进入首页，所以头像作为默认头像保存到localStorage中，以防止在blogs页面中因为路径问题无法显示头像。
       localStorage.setItem('selectedAvatar', userAvatar.src);
     }
@@ -36,6 +41,13 @@ window.onload = function() {
     };
   }
   else {
+    // 如果未登录，显示默认头像。因为在blogs文件夹也使用了这个js文件，所以这里要检测是否在blogs文件夹中。
+    if(location.pathname.includes('blogs')) {
+      userAvatar.src = '../image/user-avatar/default.png';
+    }
+    else {
+      userAvatar.src = 'image/user-avatar/default.png';
+    }
     // 未登录，显示注册和登录链接，隐藏欢迎信息
     registerLink.style.display = 'block'; // 显示注册链接
     loginLink.style.display = 'block'; // 显示登录链接
@@ -53,7 +65,13 @@ window.onload = function() {
       modal.style.display = "block";
     }
     else {
-      window.location.href = "login.html";
+      // 如果用户未登录，跳转到登录界面，因为在blogs文件夹也使用了这个js文件，所以这里要检测是否在blogs文件夹中。
+      if(location.pathname.includes('blogs')) {
+        location.href = '../login.html';
+      }
+      else {
+        location.href = 'login.html';
+      }
     }
   }
 
