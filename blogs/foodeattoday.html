@@ -1,0 +1,119 @@
+<!-- 之前偶然写的小网页 当然这里略作了一点修改 -->
+<!DOCTYPE html>
+<!--声明编码-->
+<meta charset="utf-8">
+<html>
+<head>
+    <!--导入Google Fonts，因为网络原因可能加载不出，主要是试试导入字体，之后可能会修改字体源-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@900&display=swap" rel="stylesheet">
+    <!--网页标题-->
+    <title>今天中午吃什么？</title>
+    <!--头部内嵌定义css-->
+    <style>
+        /* 视频背景样式 */
+        #bgVideo {
+        position: fixed; /* 固定位置 */
+        right: 0;
+        bottom: 0;
+        min-width: 100%; /* 至少覆盖整个宽度 */
+        min-height: 100%; /* 至少覆盖整个高度 */
+        width: auto;
+        height: auto;
+        z-index: -100; /* 确保视频在内容后面 */
+        background-size: cover; /* 覆盖整个容器 */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #foodTitle {
+            font-family: 'Noto Sans SC', sans-serif;    /* 这里是导入的字体 */
+            font-size: 64px;
+            color:white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #foodTitle span.left {
+            background-color: rgb(67, 74, 76);
+            color: white;
+            padding: 0 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        #foodDisplay {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+        #foodButton {
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: rgb(67, 74, 76);
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="bgVideo">
+        <source src="../videos/background.mp4" type="video/mp4">
+        您的浏览器不支持视频标签。
+    </video>
+    <div id="foodTitle"><span class="left">今天晚上</span>吃什么？</div>
+    <div id="foodDisplay">👇点击来测</div>
+    <button id="foodButton" onclick="displayFood()">今天吃……</button>
+
+    <script>
+        const foodTitle = document.getElementById('foodTitle');
+        const foodDisplay = document.getElementById('foodDisplay');
+        const foodButton = document.getElementById('foodButton');
+        const foods = ['面条', '米饭', '披萨', '汉堡', '寿司', '炸鸡', '沙拉', '意大利面', '炒饭', '烤鸭', '牛排', '烤鱼', '烤肉', '火锅', '煎饼', '炒面', '烤串', '炖菜', '炒菜', '烤翅', '汤', '烤比萨', '三明治', '墨西哥卷饼', '烤牛肉', '寿喜烧', '炒河粉', '章鱼小丸子', '炸薯条', '炸鱼', '炸虾'];
+        let currentInterval;
+
+        function getRandomFood() {
+            let randomFood = '';
+            do {
+                const randomIndex = Math.floor(Math.random() * foods.length);
+                randomFood = foods[randomIndex];
+            } while (randomFood === foodDisplay.textContent); // 确保下一个食物不同于当前显示的食物
+            return randomFood;
+        }
+
+        function getRandomTime() {
+            return Math.floor(Math.random() * 3000) + 1000; // 随机时间在1秒到4秒之间
+        }
+
+        function displayFood() {
+            clearInterval(currentInterval); // 清除之前的计时器
+
+            const randomFood = getRandomFood();
+            const randomTime = getRandomTime();
+
+            let i = 0;
+            currentInterval = setInterval(() => {
+                if (i >= foods.length) {
+                    clearInterval(currentInterval);
+                    foodDisplay.textContent = randomFood; // 在循环结束后立即显示最终的食物
+                } else {
+                    foodDisplay.textContent = foods[i];
+                    i++;
+                }
+            }, 100);
+
+            setTimeout(() => {
+                clearInterval(currentInterval);
+                foodDisplay.textContent = randomFood;
+            }, randomTime);
+        }
+    </script>
+</body>
+</html>

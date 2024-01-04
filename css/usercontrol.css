@@ -2,7 +2,6 @@
 body, h1, h2, h3, p, label, input, button {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
   }
 /* 注册相关 */
   .register-container {
@@ -77,20 +76,19 @@ body, h1, h2, h3, p, label, input, button {
     background-color: #e82c0c;
   }
   
-  .login-prompt {
+  .register-prompt {
     font-size: 12px;
     text-align: center;
     margin-top: 20px;
   }
   
-  .login-prompt a {
+  .register-prompt a {
     color: #007BFF;
     text-decoration: none;
   }
-  .login-prompt a:hover {
+  .register-prompt a:hover {
     color: #0056b3;
   }
-  
 
 /* 登录相关 */
 .login-container {
@@ -209,16 +207,17 @@ input:checked + .slider:before {
   background-color: #45a049; /* 鼠标悬停时的颜色变化 */
 }
 
-.register-prompt {
+.login-prompt {
   font-size: 12px;
   text-align: center;
   margin-top: 20px;
 }
 
-.register-prompt a {
+.login-prompt a {
   color: #007BFF;
   text-decoration: none;
 }
-.register-prompt a:hover {
+.login-prompt a:hover {
   color: #0056b3;
 }
+

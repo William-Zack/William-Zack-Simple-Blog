@@ -1,0 +1,38 @@
+/* 重置浏览器默认样式 */
+body, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+/* 页面主容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 主内容区的样式 */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto; /* 允许内容区域滚动 */
+  padding: 20px; /* 添加一些内边距 */
+}
+
+/* 公告标题样式 */
+.announcement-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 20px; /* 顶部略微间距 */
+  margin-bottom: 20px; /* 标题和文本之间的间距 */
+}
+
+/* 公告文本内容样式 */
+.announcement-text {
+  font-size: auto;
+  text-align: left; /* 文本左对齐 */
+  width: 80%; /* 控制文本宽度 */
+}
