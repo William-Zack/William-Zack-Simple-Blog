@@ -4,6 +4,9 @@ var blogPosts = [
     { title: "帖子", url: "blogs/index.html" },
     { title: "公告", url: "blogs/announcement.html" },
     { title: "联系", url: "blogs/contact.html" },
+    { title: "2020 年 12 月大学英语四级听力假题", url: "blogs/passage1.html" },
+    { title: "出师表", url: "blogs/passage2.html" },
+    { title: "今天晚上吃什么？", url: "blogs/passage3.html" },
     // 如果新增了更多文章可以添加在这里，也可以独立出去单独作为一个json文件，不过这里帖子就几个就没独立出去。
 ];
 // 搜索功能
