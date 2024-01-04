@@ -12,7 +12,7 @@ window.onload = function() {
     // 检查用户是否已登录并更新头像
     // 参考文献：https://www.w3schools.cn/howto/howto_css_modals.html
     // 如果已登录，检测用户是否选择了头像
-    var selectedAvatar = localStorage.getItem('selectedAvatar');
+    var selectedAvatar = localStorage.getItem(currentUser + '_avatar');
     if(selectedAvatar) {
       // 如果已选择头像，更新头像
       userAvatar.src = selectedAvatar;
@@ -26,7 +26,7 @@ window.onload = function() {
         userAvatar.src = 'image/user-avatar/00.png';
       }
       // 因为注册后必定进入首页，所以头像作为默认头像保存到localStorage中，以防止在blogs页面中因为路径问题无法显示头像。
-      localStorage.setItem('selectedAvatar', userAvatar.src);
+      localStorage.setItem(currentUser + '_avatar', userAvatar.src);
     }
     // 隐藏注册和登录链接，显示欢迎信息
     registerLink.style.display = 'none'; // 隐藏注册链接
@@ -102,7 +102,7 @@ window.onload = function() {
       previewAvatar.style.width = '200px';
       previewAvatar.style.height = '200px';
       // 保存用户选择的头像
-      localStorage.setItem('selectedAvatar', this.src);
+      localStorage.setItem(currentUser + '_avatar', this.src);
       // 更新当前用户头像
       userAvatar.src = this.src;
     }
