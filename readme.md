@@ -2,9 +2,9 @@
 
 "Web前端开发技术"课程的大作业。
 
-目前还在制作阶段。
+项目已经制作完成，同时已经上传到[GitHub](https://github.com/William-Zack/William-Zack-Simple-Blog)。
 
-因为是"Web前端开发技术"的大作业，所以对于用户数据，此网页仅存储在localStorage中。
+因为是"Web前端开发技术"的大作业，所以对于用户数据，此网页仅存储在localStorage与sessionStorage中。
 
 就这样。
 
