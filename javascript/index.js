@@ -1,4 +1,5 @@
 // ÂÖ²¥Í¼js
+// ²Î¿¼ÎÄÏ×£ºhttps://blog.csdn.net/pig_pig32/article/details/107993759
 var slideIndex = 1;
 var slides = document.getElementsByClassName("carousel-image");
 var dots = document.getElementsByClassName("dot");
