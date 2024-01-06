@@ -22,7 +22,7 @@ body, h1, h2, h3 {
   padding: 20px; /* 添加一些内边距 */
 }
 
-/* 公告标题样式 */
+/* 标题样式 */
 .announcement-title {
   font-size: 48px;
   font-weight: bold;
@@ -30,7 +30,7 @@ body, h1, h2, h3 {
   margin-bottom: 20px; /* 标题和文本之间的间距 */
 }
 
-/* 公告文本内容样式 */
+/* 文本内容样式 */
 .announcement-text {
   font-size: auto;
   text-align: left; /* 文本左对齐 */
