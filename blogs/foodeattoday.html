@@ -62,6 +62,8 @@
             border: none;
         }
     </style>
+    <link rel="icon" href="../image/blog.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../image/blog.ico" type="image/x-icon">
 </head>
 <body>
     <video autoplay muted loop id="bgVideo">
@@ -77,15 +79,15 @@
         const foodDisplay = document.getElementById('foodDisplay');
         const foodButton = document.getElementById('foodButton');
         const foods = ['面条', '米饭', '披萨', '汉堡', '寿司', '炸鸡', '沙拉', '意大利面', '炒饭', '烤鸭', '牛排', '烤鱼', '烤肉', '火锅', '煎饼', '炒面', '烤串', '炖菜', '炒菜', '烤翅', '汤', '烤比萨', '三明治', '墨西哥卷饼', '烤牛肉', '寿喜烧', '炒河粉', '章鱼小丸子', '炸薯条', '炸鱼', '炸虾'];
-        let currentInterval;
+        let currentInterval;    // 当前的计时器
 
         function getRandomFood() {
-            let randomFood = '';
+            let randomFood = ''; // 设置随机食物为空
             do {
-                const randomIndex = Math.floor(Math.random() * foods.length);
-                randomFood = foods[randomIndex];
+                const randomIndex = Math.floor(Math.random() * foods.length); // 随机索引
+                randomFood = foods[randomIndex]; // 根据索引获取随机食物
             } while (randomFood === foodDisplay.textContent); // 确保下一个食物不同于当前显示的食物
-            return randomFood;
+            return randomFood; // 返回随机食物
         }
 
         function getRandomTime() {
@@ -95,24 +97,24 @@
         function displayFood() {
             clearInterval(currentInterval); // 清除之前的计时器
 
-            const randomFood = getRandomFood();
-            const randomTime = getRandomTime();
+            const randomFood = getRandomFood(); // 获取随机食物
+            const randomTime = getRandomTime(); // 获取随机时间
 
             let i = 0;
             currentInterval = setInterval(() => {
                 if (i >= foods.length) {
-                    clearInterval(currentInterval);
+                    clearInterval(currentInterval); // 循环结束后清除计时器
                     foodDisplay.textContent = randomFood; // 在循环结束后立即显示最终的食物
                 } else {
-                    foodDisplay.textContent = foods[i];
-                    i++;
+                    foodDisplay.textContent = foods[i]; // 随机时，显示食物列表中的食物
+                    i++; // 食物索引加一，显示下一个食物
                 }
-            }, 100);
+            }, 100); // 每隔0.1秒显示一个食物
 
             setTimeout(() => {
-                clearInterval(currentInterval);
-                foodDisplay.textContent = randomFood;
-            }, randomTime);
+                clearInterval(currentInterval); // 随机时间后清除计时器
+                foodDisplay.textContent = randomFood; // 显示最终的食物
+            }, randomTime); // 随机时间后显示最终的食物
         }
     </script>
 </body>
